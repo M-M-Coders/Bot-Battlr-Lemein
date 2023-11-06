@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import BotCollection from './BotCollection';
+import BotArmy from './BotArmy';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [enlistedBots, setEnlistedBots] = useState([]);
+  const addToArmy = (bot) => {
+    if (!army.includes(bot)) {
+      setArmy([...army, bot]);
+    }
+  };
+  const enlistBot = (bot) => {
+    // Check if the bot is not already enlisted
+    if (!enlistedBots.find((b) => b.id === bot.id)) {
+      setEnlistedBots([...enlistedBots, bot]);
+    }
+  };
+
+  const releaseBot = (botId) => {
+    setEnlistedBots(enlistedBots.filter((bot) => bot.id !== botId));
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <h1>Bot Battlr</h1>
+      <BotCollection enlistBot={enlistBot} />
+      <BotArmy enlistedBots={enlistedBots} releaseBot={releaseBot} />
+    </div>
+  );
+};
 
-export default App
+export default App;
