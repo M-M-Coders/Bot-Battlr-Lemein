@@ -1,20 +1,16 @@
-# # Bot Battlr
+# Author: bryan
+## Bot Battlr
+## Core deliverables
 
-Welcome to Bot Battlr, the ultimate destination to build your own Bot Army! This React application allows you to explore a list of robots, view their details, enlist them in your army, and more.
-
-## Features
-
-- View a list of available bots.
-- Add bots to your army.
-- Remove bots from your army.
-- View your bot army.
-- Delete a bot from the list.
-
-## LIVE LINK
- To access this app, visit :https://bot-battlr-lemein.vercel.app/
-
-
-
+- See profiles of all bots rendered in `BotCollection`.
+- Add an individual bot to my army by clicking on it. The selected bot should
+  render in the `YourBotArmy` component. The bot can be enlisted only **once**.
+  The bot **does not** disappear from the `BotCollection`.
+- Release a bot from my army by clicking on it. The bot disappears from the
+  `YourBotArmy` component.
+- Discharge a bot from their service forever, by clicking the red button marked
+  "x", which would delete the bot both from the backend and from the
+  `YourBotArmy` on the frontend.
 
 ## Usage
 
@@ -25,20 +21,12 @@ Welcome to Bot Battlr, the ultimate destination to build your own Bot Army! This
    npm install
    npm start
 
-## Code Structure
+## Live Link
+hosted on vercel at [https://bot-battlr-lemein.vercel.app/]
 
-- The core functionality is contained in `index.js`.
-- Movie data is fetched from `db.json`.
-- HTML structure and elements are defined in `index.html`.
+## Tools
 
-## How to Run
-
-Simply open `index.html` in a web browser, and the application will load, displaying a list of available movies. Click on a movie to view its details and purchase tickets.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Author
-
-- [ANNETTE LEMEIN]
